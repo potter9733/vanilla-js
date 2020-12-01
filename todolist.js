@@ -128,6 +128,29 @@ function pendingToDo(text) {
   pendingArray.push(toDoObj);
   saveToDos();
 }
+function finishedToDo(text) {
+  const li = document.createElement("li");
+  const delBtn = document.createElement("button");
+  const checkBtn = document.createElement("button");
+  const span = document.createElement("span");
+  const newFinishedId = finishedArray.length + 1;
+  delBtn.addEventListener("click", finishedDeleteToDo);
+  checkBtn.addEventListener("click", checkToDo);
+  span.innerText = text;
+  delBtn.innerText = "❌";
+  checkBtn.innerText = "⏪";
+  li.appendChild(span);
+  li.appendChild(delBtn);
+  li.appendChild(checkBtn);
+  li.id = newFinishedId;
+  toDoFinished.appendChild(li);
+  const toDoObj = {
+    text: text,
+    id: newFinishedId
+  };
+  finishedArray.push(toDoObj);
+  saveToDos();
+}
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -136,7 +159,25 @@ function handleSubmit(event) {
   toDoInput.value = "";
 }
 
+function loadToDos() {
+  const loadedToDos1 = localStorage.getItem(PENDING);
+  if(loadedToDos1 !== null) {
+      const parsedToDos = JSON.parse(loadedToDos1);
+      parsedToDos.forEach(function(toDo){
+          pendingToDo(toDo.text);
+      })
+  }
+  const loadedToDos2 = localStorage.getItem(FINISHED);
+  if(loadedToDos2 !== null) {
+      const parsedToDos = JSON.parse(loadedToDos2);
+      parsedToDos.forEach(function(toDo){
+        finishedToDo(toDo.text);
+      })
+  }
+}
+
 function init() {
+  loadToDos();
   toDoForm.addEventListener("submit", handleSubmit);
 }
 
