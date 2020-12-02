@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number-game</title>
+  </head>
+  <body>
+    <h1>Random Number Game</h1>
+    <h2 class="js-guide">Generate a number between 0 and 10</h2>
+    <div>
+      <input
+        type="range"
+        min="0"
+        max="200"
+        value="10"
+        step="5"
+        class="js-range"
+      />
+    </div>
+    <div>
+      <span>Guess the number: </span>
+      <input type="number" class="js-pred" />
+      <input type="button" value="play!" class="btn" />
+    </div>
+    <div class="js-summary"></div>
+    <h3 class="js-result"></h3>
+    <script src="number-game.js"></script>
+  </body>
+</html>
