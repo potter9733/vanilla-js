@@ -1,0 +1,85 @@
+body {
+  width: 543px;
+  height: 281px;
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 3px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+input {
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+input:focus {
+  outline: none;
+}
+
+h1 {
+  z-index: -1;
+  text-align: end;
+  margin: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  white-space: pre;
+}
+
+.js-cal {
+  width: 400px;
+  height: 51px;
+  margin-bottom: 3px;
+}
+
+.num {
+  width: 400px;
+  height: 273px;
+}
+
+.num-btn {
+  width: 129px;
+  height: 50px;
+  margin: 3px 0;
+  padding: 0;
+}
+
+.zero {
+  width: 263px;
+}
+
+.js-operation {
+  height: 274px;
+  width: 100px;
+  position: absolute;
+  left: 408px;
+  top: 4px;
+}
+
+.js-operation input {
+  width: 129px;
+  height: 50px;
+  margin-bottom: 6px;
+}
+
+.tomato {
+  background-color: orange;
+}
+
+.js-equal {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 129px;
+  height: 50px;
+  position: absolute;
+  bottom: 1px;
+  left: 273px;
+}
+
+.reset {
+  background-color: rgba(0, 0, 0, 0.3);
+}
